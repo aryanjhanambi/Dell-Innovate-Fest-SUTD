@@ -1,0 +1,5 @@
+python-dotenv>=1.2.1
+websockets>=15.0.1
+fastmcp>=2.13.0
+psycopg[binary]>=3.2          # Neon Postgres backend (KB_BACKEND=neon)
+pytest>=8.0.0

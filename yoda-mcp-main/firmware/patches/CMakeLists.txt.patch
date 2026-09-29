@@ -1,0 +1,16 @@
+diff --git a/main/CMakeLists.txt b/main/CMakeLists.txt
+index b324e22..ec438be 100644
+--- a/main/CMakeLists.txt
++++ b/main/CMakeLists.txt
+@@ -783,6 +783,11 @@ elseif(CONFIG_BOARD_TYPE_BREAD_COMPACT_WIFI_CAM)
+     set(BUILTIN_TEXT_FONT font_puhui_basic_16_4)
+     set(BUILTIN_ICON_FONT font_awesome_16_4)
+     set(DEFAULT_EMOJI_COLLECTION twemoji_64)
++elseif(CONFIG_BOARD_TYPE_YODA_PENDANT)
++    set(BOARD_TYPE "yoda-pendant")
++    set(BUILTIN_TEXT_FONT font_puhui_basic_16_4)
++    set(BUILTIN_ICON_FONT font_awesome_16_4)
++    set(DEFAULT_EMOJI_COLLECTION twemoji_64)
+ elseif(CONFIG_BOARD_TYPE_JIUCHUAN)
+     set(BOARD_TYPE "jiuchuan-s3")
+     set(BUILTIN_TEXT_FONT font_puhui_basic_20_4)

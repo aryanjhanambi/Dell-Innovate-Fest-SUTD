@@ -1,0 +1,91 @@
+diff --git a/main/boards/common/esp32_camera.cc b/main/boards/common/esp32_camera.cc
+index 76eaaab..342a0c1 100644
+--- a/main/boards/common/esp32_camera.cc
++++ b/main/boards/common/esp32_camera.cc
+@@ -3,6 +3,7 @@
+ #include <esp_heap_caps.h>
+ #include <cstdio>
+ #include <cstring>
++#include <cstdlib>
+ #include <esp_log.h>
+ #include <img_converters.h>
+ 
+@@ -320,3 +321,78 @@ std::string Esp32Camera::Explain(const std::string &question) {
+              current_fb_->width, current_fb_->height, (int)total_sent, (int)remain_stack_size, question.c_str(), result.c_str());
+     return result;
+ }
++
++bool Esp32Camera::CaptureToJpeg(std::string& out) {
++    if (!Capture()) {
++        return false;
++    }
++    if (current_fb_ == nullptr) {
++        return false;
++    }
++
++    // Sensor already gives JPEG — just copy it out.
++    if (current_fb_->format == PIXFORMAT_JPEG) {
++        out.assign(reinterpret_cast<const char*>(current_fb_->buf), current_fb_->len);
++        return !out.empty();
++    }
++
++    uint16_t w = current_fb_->width;
++    uint16_t h = current_fb_->height;
++    v4l2_pix_fmt_t enc_fmt;
++    switch (current_fb_->format) {
++        case PIXFORMAT_RGB565:    enc_fmt = V4L2_PIX_FMT_RGB565; break;
++        case PIXFORMAT_YUV422:    enc_fmt = V4L2_PIX_FMT_YUYV; break;
++        case PIXFORMAT_YUV420:    enc_fmt = V4L2_PIX_FMT_YUV420; break;
++        case PIXFORMAT_GRAYSCALE: enc_fmt = V4L2_PIX_FMT_GREY; break;
++        case PIXFORMAT_RGB888:    enc_fmt = V4L2_PIX_FMT_RGB24; break;
++        default:
++            ESP_LOGE(TAG, "CaptureToJpeg: unsupported format %d", current_fb_->format);
++            return false;
++    }
++
++    // For RGB565 the (optionally byte-swapped) copy lives in encode_buf_.
++    uint8_t* src = current_fb_->buf;
++    size_t src_len = current_fb_->len;
++    if (current_fb_->format == PIXFORMAT_RGB565 && encode_buf_ != nullptr) {
++        src = encode_buf_;
++        src_len = encode_buf_size_;
++    }
++
++    out.clear();
++    bool ok = image_to_jpeg_cb(src, src_len, w, h, enc_fmt, 80,
++        [](void* arg, size_t index, const void* data, size_t len) -> size_t {
++            auto s = static_cast<std::string*>(arg);
++            if (data != nullptr && len > 0) {
++                s->append(reinterpret_cast<const char*>(data), len);
++            }
++            return len;
++        }, &out);
++
++    return ok && !out.empty();
++}
++
++bool Esp32Camera::CaptureJpegStream(std::string& out) {
++    if (!streaming_on_) {
++        return false;
++    }
++    camera_fb_t* fb = esp_camera_fb_get();
++    if (fb == nullptr) {
++        return false;
++    }
++    out.clear();
++    bool ok = false;
++    if (fb->format == PIXFORMAT_JPEG) {
++        out.assign(reinterpret_cast<const char*>(fb->buf), fb->len);
++        ok = !out.empty();
++    } else {
++        uint8_t* jpg = nullptr;
++        size_t jpg_len = 0;
++        if (frame2jpg(fb, 80, &jpg, &jpg_len) && jpg != nullptr) {
++            out.assign(reinterpret_cast<const char*>(jpg), jpg_len);
++            free(jpg);
++            ok = !out.empty();
++        }
++    }
++    esp_camera_fb_return(fb);
++    return ok;
++}

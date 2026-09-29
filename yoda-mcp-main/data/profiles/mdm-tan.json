@@ -1,0 +1,225 @@
+{
+  "_notice": "SYNTHETIC DEMO DATA. 'Madam Tan' is a fictional person. Not real patient data.",
+  "senior_id": "mdm-tan",
+  "last_updated": "2026-07-06",
+
+  "section_a_identification": {
+    "name": "Tan Ah Moey",
+    "preferred_name": "Madam Tan",
+    "gender": "Female",
+    "birthdate": "1954-03-12",
+    "age": 72,
+    "marital_status": "Widowed",
+    "nric_type": "Singapore Pink",
+    "reason_for_assessment": "Post-discharge review — coronary artery bypass graft (CABG), surgery 2 days ago",
+    "residential_status": "HDB - 3 Room",
+    "living_arrangement": "Alone",
+    "location": "Bedok North"
+  },
+
+  "section_b_cognition_communication": {
+    "cognitive_skills_daily_decision_making": "Modified independence — some difficulty in new situations only",
+    "short_term_memory_ok": true,
+    "change_in_decision_making_vs_90_days": "No change",
+    "making_self_understood": "Understood — expresses ideas without difficulty",
+    "ability_to_understand_others": "Usually understands — misses some part of message but comprehends most conversation",
+    "vision": "Minimal difficulty — sees large print but not regular print",
+    "hearing": "Minimal difficulty — difficulty when person speaks softly or is more than 2 metres away",
+    "acute_change_in_mental_status": false
+  },
+
+  "section_c_mood_psychosocial": {
+    "indicators_of_depression_anxiety": {
+      "negative_statements": "Not present",
+      "persistent_anger": "Not present",
+      "unrealistic_fears": "Present but not exhibited in last 3 days",
+      "repetitive_health_complaints": "Not present",
+      "sad_facial_expressions": "Not present",
+      "crying_tearfulness": "Not present",
+      "withdrawal_from_activities": "Exhibited on 1-2 of last 3 days"
+    },
+    "self_reported_mood": {
+      "little_interest_or_pleasure": "In 1-2 of last 3 days",
+      "anxious_restless": "In 1-2 of last 3 days",
+      "sad_depressed_hopeless": "Not in last 3 days"
+    },
+    "social_relationships": {
+      "participation_in_social_activities": "8-30 days ago",
+      "degree_of_loneliness": "Occasionally (less than weekly)",
+      "has_close_friend_in_community": true,
+      "hours_of_informal_care_last_3_days": 2,
+      "family_overwhelmed_by_illness": false,
+      "change_in_social_activities_last_90_days": "Decline, not distressed"
+    },
+    "self_injurious_ideation": "Never"
+  },
+
+  "section_d_functional_status": {
+    "iadl_capacity": {
+      "meal_preparation": "Setup help only",
+      "ordinary_housework": "Independent",
+      "managing_finances": "Supervision",
+      "managing_medications": "Setup help only",
+      "phone_use": "Independent",
+      "stairs": "Limited assistance",
+      "shopping": "Supervision",
+      "transportation": "Supervision"
+    },
+    "iadl_self_performance": {
+      "meal_preparation": "Setup help only",
+      "shopping": "Supervision"
+    },
+    "adl_self_performance": {
+      "bathing": "Limited assistance",
+      "personal_hygiene": "Independent",
+      "dressing_upper_body": "Limited assistance",
+      "dressing_lower_body": "Independent",
+      "walking": "Supervision",
+      "locomotion": "Supervision",
+      "locomotion_outside_home": "Limited assistance",
+      "transfer_toilet": "Independent",
+      "toilet_use": "Independent",
+      "bed_mobility": "Limited assistance",
+      "eating": "Independent"
+    },
+    "functional_activities": {
+      "primary_mode_of_locomotion": "Walking, uses assistive device (cane)",
+      "total_hours_exercise_last_3_days": "Less than 1 hour",
+      "days_went_out_last_3_days": "0 days",
+      "change_in_adl_status_vs_90_days": "Decline (post-surgery)",
+      "drove_car_last_90_days": false
+    }
+  },
+
+  "section_e_health_conditions": {
+    "bladder_continence": "Continent",
+    "bowel_continence": "Continent",
+    "falls": {
+      "last_30_days": "No falls",
+      "31_to_90_days_ago": "No falls",
+      "91_to_180_days_ago": "No falls"
+    },
+    "problem_frequency_last_3_days": {
+      "dizziness": "Present but not exhibited in last 3 days",
+      "unsteady_gait": "Exhibited on 1-2 of last 3 days",
+      "chest_pain": "Present but not exhibited in last 3 days",
+      "abnormal_thought_process": "Not present",
+      "delusions": "Not present",
+      "hallucinations": "Not present",
+      "aphasia": "Not present",
+      "constipation": "Exhibited on 1 of last 3 days",
+      "diarrhoea": "Not present",
+      "vomiting": "Not present",
+      "sleep_difficulty": "Exhibited on 1-2 of last 3 days",
+      "fever": "Not present",
+      "dehydration": "Not present",
+      "peripheral_oedema": "Present but not exhibited in last 3 days"
+    },
+    "dyspnoea": "Absent at rest, but present when performed moderate activities",
+    "fatigue": "Moderate — diminished energy, needs rest after light activity (post-op)",
+    "pain_symptoms": {
+      "frequency": "Present daily",
+      "intensity": "Moderate",
+      "location": "Chest (surgical incision site)"
+    },
+    "instability_of_conditions": {
+      "conditions_make_patterns_unstable": true,
+      "experiencing_acute_episode": true,
+      "end_stage_disease": false
+    },
+    "self_reported_health": "Poor",
+    "tobacco": "No",
+    "alcohol": "No"
+  },
+
+  "section_f_disease_diagnoses": {
+    "stroke_cva": "Not present",
+    "coronary_heart_disease": "Present, treated or monitored",
+    "copd": "Not present",
+    "congestive_heart_failure": "Not present",
+    "cancer": "Not present",
+    "diabetes_mellitus": "Present, treated or monitored",
+    "hypertension": "Present, treated or monitored",
+    "hyperlipidemia": "Present, treated or monitored",
+    "alzheimers_disease": "Not present",
+    "multiple_sclerosis": "Not present",
+    "other_dementia": "Not present"
+  },
+
+  "section_g_nutritional": {
+    "weight_loss_5pct_last_30_days": false,
+    "ate_one_or_fewer_meals_per_day": false,
+    "noticeable_decrease_in_food_intake": true,
+    "fluid_intake_less_than_1000ml": false,
+    "fluid_output_exceeds_input": false,
+    "mode_of_nutritional_intake": "Normal — swallows all types of foods"
+  },
+
+  "section_h_procedures_treatments": {
+    "recent_surgery": "Coronary artery bypass graft (CABG) — discharged 2 days ago",
+    "inpatient_hospital_last_90_days": 1,
+    "emergency_room_visits_last_90_days": 0,
+    "physician_visits_last_90_days": 4,
+    "medications": ["Aspirin", "Warfarin (blood thinner)", "Beta-blocker", "Statin", "Metformin"],
+    "influenza_vaccine_last_year": true,
+    "pneumovax_vaccine_last_5_years": true,
+    "wound_care": "Ordered — chest (sternotomy) incision care post-CABG"
+  },
+
+  "section_i_finances_stressors": {
+    "financial_trade_offs_last_30_days": false,
+    "major_life_stressors_last_90_days": true
+  },
+
+  "section_p_caregiver": {
+    "primary_caregiver": {
+      "relationship": "Child (daughter)",
+      "name": "Linda Tan",
+      "lives_with_person": false,
+      "availability": "Morning only"
+    },
+    "has_domestic_helper": false
+  },
+
+  "section_q_possible_abuse": {
+    "threatened_by_family_member": "Never",
+    "conflict_or_anger_with_family": "Never",
+    "fearful_of_family_member": "Never",
+    "neglected_abused_mistreated": "Never",
+    "poor_hygiene": "Never",
+    "physically_restrained": "Never"
+  },
+
+  "section_r_distressed_social_life": {
+    "informal_helper_unable_to_continue": false,
+    "primary_helper_feels_distressed": false
+  },
+
+  "section_k_overall_status": {
+    "overall_self_sufficiency_vs_90_days": "Decline (recovering from surgery)"
+  },
+
+  "yoda_profile": {
+    "preferred_address": "Madam Tan",
+    "language_preference": "English with some Mandarin phrases",
+    "enrolled_services": ["Post-discharge home care", "Cardiac rehab (pending)"],
+    "interests": ["Mandarin songs", "Gardening", "Mahjong with neighbours"],
+    "fitness_preferences": {
+      "new_to_fitness_classes": true,
+      "preferred_day": "Weekday",
+      "goals": ["cardiac recovery", "gentle mobility"],
+      "recent_injury_or_surgery": true,
+      "preferred_location": "Heartbeat@Bedok",
+      "open_to_volunteering": false
+    },
+    "risk_flags": [
+      "Heart bypass surgery (CABG) 2 days ago — just discharged",
+      "On cardiac medications + blood thinner (warfarin)",
+      "Post-op chest incision — infection / bleeding watch",
+      "Lives alone, no next of kin nearby",
+      "Diabetes + hypertension (comorbidities)"
+    ],
+    "booked_activities": [],
+    "caregiver_alerts": []
+  }
+}

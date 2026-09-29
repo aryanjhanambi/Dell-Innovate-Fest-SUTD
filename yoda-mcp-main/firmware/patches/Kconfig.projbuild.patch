@@ -1,0 +1,14 @@
+diff --git a/main/Kconfig.projbuild b/main/Kconfig.projbuild
+index 75e1eaf..c48db53 100644
+--- a/main/Kconfig.projbuild
++++ b/main/Kconfig.projbuild
+@@ -131,6 +131,9 @@ choice BOARD_TYPE
+     config BOARD_TYPE_BREAD_COMPACT_WIFI_CAM
+         bool "Bread Compact WiFi + LCD + Camera (面包板)"
+         depends on IDF_TARGET_ESP32S3
++    config BOARD_TYPE_YODA_PENDANT
++        bool "Yoda Pendant (XIAO ESP32-S3 Sense + Camera)"
++        depends on IDF_TARGET_ESP32S3
+     config BOARD_TYPE_BREAD_COMPACT_ML307
+         bool "Bread Compact ML307/EC801E (面包板 4G)"
+         depends on IDF_TARGET_ESP32S3

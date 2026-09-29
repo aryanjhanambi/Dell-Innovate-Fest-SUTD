@@ -1,0 +1,7 @@
+# Deps for the laptop voice bridge (jarvis_speak.py) -- separate from the MCP server.
+# Install into the same venv:  .venv\Scripts\python.exe -m pip install -r requirements-voice.txt
+pyserial
+sounddevice
+numpy
+cartesia
+elevenlabs

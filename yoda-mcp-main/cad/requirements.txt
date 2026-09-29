@@ -1,0 +1,6 @@
+# CAD env for the pendant enclosure (separate from the MCP .venv).
+# python -m venv cad/.venv ; cad/.venv/Scripts/python -m pip install -r cad/requirements.txt
+build123d
+trimesh
+matplotlib
+numpy-stl

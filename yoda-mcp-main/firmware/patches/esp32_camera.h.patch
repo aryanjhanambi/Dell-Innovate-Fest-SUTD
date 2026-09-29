@@ -1,0 +1,15 @@
+diff --git a/main/boards/common/esp32_camera.h b/main/boards/common/esp32_camera.h
+index e2fb071..e29f10e 100644
+--- a/main/boards/common/esp32_camera.h
++++ b/main/boards/common/esp32_camera.h
+@@ -41,4 +41,10 @@ public:
+     virtual bool SetVFlip(bool enabled) override;
+     virtual bool SetSwapBytes(bool enabled) override;
+     virtual std::string Explain(const std::string &question) override;
++
++    // Capture one frame and return it encoded as a JPEG (used by the welfare-check HTTP server).
++    bool CaptureToJpeg(std::string& out);
++
++    // Lean single-grab JPEG (frame2jpg, no preview / no 2x grab) for the live MJPEG stream.
++    bool CaptureJpegStream(std::string& out);
+ };
